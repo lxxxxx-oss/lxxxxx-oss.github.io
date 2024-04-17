@@ -4,13 +4,38 @@
   
   
   <entry>
-    <title>Hello World</title>
-    <link href="/2024/04/12/hello-world/"/>
-    <url>/2024/04/12/hello-world/</url>
+    <title>数据库简答总结</title>
+    <link href="/2024/03/29/hello-world/"/>
+    <url>/2024/03/29/hello-world/</url>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    <content type="html"><![CDATA[<ol><li>数据，数据库，数据库管理系统，数据库系统的定义<ol><li>数据：数据是描述事物的符号记录，可以是数字、文字、图像、声音等形式的信息</li><li>数据库：数据库是按照数据结构来组织、存储和管理数据的集合，它能高效地存取、更新和管理数据</li><li>数据库管理系统：是一种软件，用于管理数据库的创建、操作、维护和控制。它提供了数据的安全性、完整性、一致性和持久性功能；同时还提供了对数据的查询、分析和修改等操作</li><li>数据库系统：是指由数据库、数据库管理系统以及相关的应用程序组成的集合。它是一个大型的软件系统，用于管理和处理大量数据，并支持用户对数据进行高效的存取和操作。数据库系统的设计旨在提供高效的数据管理和使用，以满足用户对数据处理的各种需求。</li></ol></li><li>DBA的职责是什么？</li></ol><p>DBA是指数据库管理员，负责全面管理和控制数据库系统，具体来说有以下几个方面：</p><ol><li><ol><li>决定数据库中要存放哪些信息；</li><li>决定数据库的存储结构和存取策略；</li><li>定义数据的安全性要求和完整性约束条件</li><li>监控数据库的使用和运行：转储数据、维护日志文件、故障恢复</li><li>数据库的改进和重组重构：对运行情况进行记录、统计分析，以此来不断改进数据库设计。</li></ol></li><li>三级模式结构，二级映像的定义以及优点<ol><li>三级模式结构是数据库系统中常见的一种组织结构，它包含三个层次：外模式、概念模式（也叫模式）和内模式。每个层次都提供了不同的视角和抽象级别来描述数据库的结构和组织。<ul><li>外模式：它是用户和应用程序所能看到和访问的数据的部分视图。它定义了用户能够操作的数据以及数据的逻辑结构和组织方式。外模式隐藏了数据的细节，是用户可以更简单的与数据库进行交互</li><li>概念模式（模式）：它是整个数据库的逻辑结构和组织方式的抽象描述。它提供了一个中介层，将外模式和内模式隔离开来，使得数据库的逻辑设计与物理实现相分离</li><li>内模式：它描述了数据库在物理存储上的实际组织方式和数据存储结构。内模式定义了数据在磁盘或其他存储介质上的存储格式、索引方式、数据分区等细节信息。内模式与计算机系统的物理特性密切相关，通常由数据库管理系统管理和维护。</li></ul></li><li>二级映像是指在数据库系统中，外模式和概念模式之间、概念模式和内模式之间存在的映射关系。<ul><li>外模式到概念模式的映射：描述了外部视图与全局视图之间的关系。这种映射关系使得用户能够通过外模式来访问和操作数据库中的数据，而无需了解内部的细节。</li><li>概念模式到内模式的映射：描述了全局视图与存储视图之间的关系。这种映射关系使得数据库的逻辑设计和物理实现相分离，可以独立地对概念模式和内模式进行优化和调整</li></ul></li><li>优点如下<ul><li>数据独立性：二级映像提供了数据独立性，使得外部视图与全局视图之间、全局视图和存储视图之间彼此独立。使得数据库的逻辑结构和物理实现的修改不会影响外部视图和应用程序，从而降低了系统的耦合性，增强和系统的灵活性和可维护性</li><li>安全性：通过外模式，可以对用户进行授权，限制他们对数据库的访问权限和操作权限。</li><li>性能优化：通过概念模式到内模式的映射，可以对数据库的物理存储结构进行优化，提高数据访问速度。</li></ul></li></ol></li><li>关系模式中的完整性约束有哪几类？<ol><li>实体完整性约束：实体完整性确保每个关系中的每条记录都有唯一的标识符，也就是主码有且仅有一个，这样就可以确保每个实体实例都能够被唯一地标识和区分</li><li>参照完整性约束：参照完整性确保关系之间的引用关系的一致性。通常通过外键来实现，它指定了一个关系中的属性或属性集合，其取值必须与另一个关系中的某个属性或属性集合的取值相匹配。参照完整性约束确保了关系之间的引用的有效性和一致性，防止了数据的不一致和错误。</li><li>用户定义的完整性约束：用户可以根据自己的业务需求定义额外的完整性约束，来确保数据的完整性和一致性。这些约束通常是通过触发器、存储过程或应用程序逻辑来实现的</li><li></li></ol></li><li>等值连接和自然连接的区别和联系<ol><li>联系：<ul><li>自然连接是一种特殊的等值连接，他们都是两个或多个表之间进行连接的产物</li><li>二者都是内连接，只返回满足连接条件的行即可</li></ul></li><li>区别：<ul><li>连接条件的不同：<ol><li>等值连接是基于用户指定的等值条件进行连接的操作，通常通过使用“&#x3D;”将两个表的列进行连接。</li><li>自然连接是基于两个表中具有相同名称和相同数据类型的列进行连接的操作，连接的条件是隐式地根据相同列的名称和数据类型自动生成的</li></ol></li><li>返回的结果不同：<ol><li>等值连接返回的结果是满足连接条件的行组合，即两个表中连接列的值相等的行</li><li>自然连接返回的结果是两个表中所有满足连接条件的行的组合，且会删除重复列</li></ol></li></ul></li></ol></li></ol><p><a href="https://hexo.io/docs/one-command-deployment.html">https://hexo.io/docs/one-command-deployment.html</a>)</p>]]></content>
     
     
+    
+    <tags>
+      
+      <tag>编程语言</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>C++简答题总结</title>
+    <link href="/2024/03/23/C++/"/>
+    <url>/2024/03/23/C++/</url>
+    
+    <content type="html"><![CDATA[<ol><li><p><strong>简述面向对象三大特性</strong></p><ol><li>封装：<strong>封装是可信的类或对象操作，对不可信的隐藏</strong>。通过封装，对象的内部具体操作的实现细节被隐藏，只有特定的接口暴露给外部。</li><li>继承：<strong>继承允许一个类继承另一个类的属性和方法</strong>。子类可以重用父类的代码，并且可以添加新的属性和方法或覆盖父类的方法。继承支持代码重用，提高了代码的可维护性和扩展性。</li><li>多态：多态是指通过****类的继承*<em><strong>，使得同一个函数可以根据调用它的对象不同而做出不同的反应。多态是</strong>指用一个相同的函数名定义不同的函数实现，调用这些函数执行不同操作</em>*，但是有相似的行为，即用同样的接口访问不同的函数实现。多态性提高了代码的灵活性和可扩展性，使得程序更容易扩展和维护。</li></ol></li><li><p><strong>简述友元函数的利与弊</strong></p><ol><li>利：在实现类之间数据共享的时候，<strong>减少系统开销，提升效率</strong>。因为普通函数无法访问私有的成员，而友元函数 可以方便、快捷的访问私有成员</li><li>弊：由于友元能够直接访问到私有成员，所以它<strong>破坏了面向对象的封装机制</strong>，所以在实际开发中，要减少使用友元函数。</li></ol></li><li><p><em><strong>*简述一下内联函数*</strong></em></p></li></ol><p>内联函数是C++中的一种函数特性，通过在函数定义前面加上关键字<strong>inline</strong>实现。</p><p>内联函数告诉编译器在每个调用点上直接插入函数体，而不是生成函数调用的过程，这样就可以<strong>减少函数调用的开销，提高函数运行的效率</strong></p><p>同时内联函数最初的目的是<strong>用于代替部分的#define宏定义</strong>，之所以要代替宏定义，是因为宏的编写有很多限制，且宏没有类型检查，无论对或错都是直接替换。而内联函数完美的解决了这些问题。</p><p>内联函数<strong>适用于函数体较小且频繁调用的情况</strong>，但不是所有标记为“inline”的函数都会被内联，最终到底会不会进行内联，还是要由编译器决定。</p><ol><li><p><strong>简述指针和引用的区别</strong></p><ol><li>相同点：都是有关地址的概论，指针指向一个变量在内存中的地址，而引用则是地址的别名</li><li>不同点：<ul><li>引用必须被初始化，但是不分配存储空间</li><li>引用被初始化后不能被改变，但是指针可以改变所指对象</li><li>不存在指向空值的引用，但是存在指向空值的指针</li></ul></li></ol></li><li><p><strong>简述一下指针数组和数组指针</strong></p><ol><li>指针数组<ul><li>指针数组<em><strong>*是一个数组*<em><strong>，它的</strong></em>*每一个元素都是指针*</strong></em></li><li>其中每个指针可以指向不同类型的数据或相同类型的数据</li><li>可以通过索引来访问数组中的每一个指针，并可以通过指针来访问其所指向的数据</li></ul></li><li>数组指针<ul><li>数组指针<em><strong>*是一个指针*<em><strong>，它</strong></em>*指向数组的首元素*</strong></em></li><li>它可以指向数组中的任何位置，并可以通过算术运算来访问数组中的其他元素</li><li>数组指针的声明中必须指定数组的类型和维度</li></ul></li></ol></li><li><p><em><strong>*简述一下什么是类*</strong></em></p></li></ol><p>类是面向对象编程中的基本概念，****用来描述具有相同的属性和方法的对象的集合****。类定义了对象的属性和行为，并且提供了对这些属性和行为的访问控制，其中包括公有、私有以及保护。类是对象的抽象、对象是类的实例。</p><ol><li><p><strong>结构体和共用体的异同</strong></p><ol><li>同：<ul><li>它们都是<em><strong>*用来组织多个数据成员的数据结构*</strong></em></li><li>它们的成员都是通过成员选择运算符’.’进行访问</li></ul></li><li>异<ul><li>结构体的所有成员在内存中是按<strong>顺序存储</strong>的，而共用体是<strong>全部成员共享一块内存空间</strong></li><li>结构体的内存占用是全部成员所占内存大小之和，而共用体的内存占用取决于最大成员所占用内存空间大小</li><li>结构体可以为每个成员分别赋初值，而共用体只能给第一个成员赋值。</li></ul></li></ol></li><li><p><strong>简述一下构造函数和析构函数</strong></p><ol><li>构造函数</li></ol></li></ol><p>构造函数是一种特殊的成员函数，在对象被创建时自动调用，用于<strong>初始化数据成员</strong>；构造函数的名称与类名相同，没有返回类型，void都没有；构造函数可以进行函数重载，所以我们可以定义构造函数；构造函数可以具有参数，称为形参，用于在创建对象时向对象传递初始值。</p><ol><li><ol><li>析构函数</li></ol></li></ol><p>析构函数同样是一个特殊的成员函数，在对象销毁时自动调用，用于<strong>清理对象所分配的资源</strong>。析构函数的名称用“~”开头，没有返回类型和参数。与构造函数不同，析构函数不能重载，每个类只能存在一个析构函数。</p><ol><li><strong>简述一下静态数据成员</strong></li></ol><p>静态数据成员是指<strong>属于类本身而不是类的特定对象的数据成员</strong>，类的<strong>所有对象共享静态数据成员</strong>。</p><p>它具有以下特性和用法</p><ol><li><ol><li>共享性</li><li>一次分配</li><li>通过类名访问</li><li>常用于共享状态和全局设置</li><li>不依赖实例化</li></ol></li><li><p><em><strong>*简述c++的动态内存分配*</strong></em></p></li></ol><p>在编程的过程中，我们无法预知具体需要多少内存，所需内存的大小需要在运行的时候才能确认，这个时候我们就可以使用c++的动态内存分配机制，用new运算符为给定类型变量在运行时分配内存，这会返回所分配的空间地址，若不再需要动态分配的内存空间，可以使用delete运算符，清空之前由new运算符分配的内存。</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>编程语言</tag>
+      
+    </tags>
     
   </entry>
   
